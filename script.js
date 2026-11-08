@@ -248,61 +248,13 @@ const barObserver = new IntersectionObserver((entries) => {
 const profSection = document.querySelector('.proficiency');
 if (profSection) barObserver.observe(profSection);
 
-// ─── CONTACT FORM — REAL EMAIL via Web3Forms ──────────────────
+// ─── CONTACT FORM — PURE NATIVE FORMSUBMIT ───────────────────
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
+  form.addEventListener('submit', () => {
     const submitBtn = document.getElementById('submitBtn');
-    const formStatus = document.getElementById('formStatus');
-    const accessKey = form.querySelector('[name="access_key"]').value;
-
-    // Check if the user has set up their Web3Forms key
-    if (accessKey === 'YOUR_WEB3FORMS_KEY') {
-      // Fallback: open email client with pre-filled message
-      const name    = form.querySelector('[name="name"]').value;
-      const email   = form.querySelector('[name="email"]').value;
-      const subject = form.querySelector('[name="subject_detail"]').value || 'Portfolio Inquiry';
-      const message = form.querySelector('[name="message"]').value;
-      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-      window.location.href = `mailto:asifibnekamal.10@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      return;
-    }
-
-    // Show loading state
-    submitBtn.disabled = true;
-    submitBtn.querySelector('span').textContent = 'Sending...';
-
-    const formData = new FormData(form);
-    const object   = Object.fromEntries(formData);
-    const json     = JSON.stringify(object);
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: json
-      });
-      const result = await response.json();
-
-      if (result.success) {
-        formStatus.style.display = 'block';
-        formStatus.className = 'form-status success';
-        formStatus.textContent = '✅ Message sent! I\'ll get back to you soon.';
-        form.reset();
-        setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
-      } else {
-        throw new Error(result.message || 'Failed to send');
-      }
-    } catch (err) {
-      formStatus.style.display = 'block';
-      formStatus.className = 'form-status error';
-      formStatus.textContent = '❌ Something went wrong. Please email directly: asifibnekamal.10@gmail.com';
-      setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.querySelector('span').textContent = 'Send Message';
+    if (submitBtn) {
+      submitBtn.querySelector('span').textContent = 'Sending...';
     }
   });
 }

@@ -858,12 +858,11 @@
           </div>
         </div>
         <div class="contact-form-wrap reveal">
-          <form class="contact-form" id="contactForm">
-            <!-- Web3Forms hidden fields -->
-            <input type="hidden" name="web" value="imnr yqon jmea wggg" />
-            <input type="hidden" name="subject" value="New Portfolio Contact — Asif Ibne Kamal" />
-            <input type="hidden" name="from_name" value="Portfolio Contact Form" />
-            <input type="hidden" name="redirect" value="false" />
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/shuvo.devsaa@gmail.com" method="POST">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_subject" value="New Inquiry from Portfolio — Asif Ibne Kamal" />
             <div class="form-group">
               <label>Your Name</label>
               <input type="text" name="name" placeholder="John Doe" required />
@@ -874,7 +873,7 @@
             </div>
             <div class="form-group">
               <label>Subject</label>
-              <input type="text" name="subject_detail" placeholder="Job Opportunity" />
+              <input type="text" name="subject" placeholder="Job Opportunity" />
             </div>
             <div class="form-group">
               <label>Message</label>
