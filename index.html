@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asif Ibne Kamal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="brand-text">AIK</span>
+      <span class="brand-dot"></span>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#casestudies" class="nav-link">Case Studies</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      <li><a href="#extras" class="nav-link">Activities</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for Opportunities</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line" data-text="Asif">Asif</span>
+        <span class="line gradient-text" data-text="Ibne Kamal">Ibne Kamal</span>
+      </h1>
+      <div class="hero-roles">
+        <span class="role-prefix">I'm a </span>
+        <span class="typing-text" id="typingText"></span>
+        <span class="typing-cursor">|</span>
+      </div>
+      <p class="hero-desc">
+        Data-driven professional skilled in client acquisition, account management,
+        and business development. Building bridges between businesses and their goals.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          <span>Get In Touch</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#experience" class="btn btn-ghost">
+          <span>View Work</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="4">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Roles Held</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-ring ring-3"></div>
+      <div class="avatar-ring ring-2"></div>
+      <div class="avatar-ring ring-1"></div>
+      <div class="avatar-card">
+        <div class="avatar-initials">AIK</div>
+        <div class="avatar-status">
+          <span class="status-dot"></span>
+          <span>Open to Work</span>
+        </div>
+      </div>
+      <div class="floating-badge badge-top">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+        Sales Expert
+      </div>
+      <div class="floating-badge badge-bottom">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+        Data Analytics
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who I <span class="gradient-text">Am</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-lead">
+            Data-driven professional with hands-on experience in <strong>client acquisition</strong>,
+            <strong>account management</strong>, and <strong>inventory/data reporting</strong>.
+          </p>
+          <p>
+            Skilled in building client relationships, managing proposals through to closure, and using
+            data analytics tools to support decision-making. Strong communicator and analytical thinker
+            with experience coordinating cross-functional teams to deliver results.
+          </p>
+          <p>
+            Interested in building a career in <strong>Sales and Business Development</strong> with
+            international clients.
+          </p>
+          <div class="about-info">
+            <div class="info-item">
+              <span class="info-label">📍 Location</span>
+              <span class="info-val">Dhaka, Bangladesh</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">📞 Phone</span>
+              <span class="info-val">01811786062</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">📧 Email</span>
+              <span class="info-val">asifibnekamal.10@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">🌐 LinkedIn</span>
+              <span class="info-val"><a href="https://www.linkedin.com/in/asifibnekama"
+                  target="_blank">linkedin.com/in/asifibnekama</a></span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">🐙 GitHub</span>
+              <span class="info-val"><a href="https://github.com/asifibnekamal"
+                  target="_blank">github.com/asifibnekamal</a></span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">🗣️ Languages</span>
+              <span class="info-val">Bangla, English, Hindi</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-cards reveal">
+          <div class="about-card card-blue">
+            <div class="card-icon">🤝</div>
+            <h4>Client Relations</h4>
+            <p>Expert in managing international client communications and relationships</p>
+          </div>
+          <div class="about-card card-dark">
+            <div class="card-icon">📊</div>
+            <h4>Data Analytics</h4>
+            <p>Proficient in Excel, Google Sheets, and analytical reporting</p>
+          </div>
+          <div class="about-card card-dark">
+            <div class="card-icon">🚀</div>
+            <h4>Business Dev</h4>
+            <p>Skilled in lead generation, proposals, and sales closure</p>
+          </div>
+          <div class="about-card card-blue">
+            <div class="card-icon">💻</div>
+            <h4>Web Design</h4>
+            <p>CMS-based website creation and digital solutions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Core <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">💼</div>
+            <h3>Business & Sales</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">International Client Communication</span>
+            <span class="skill-tag">Customer Relationship Management</span>
+            <span class="skill-tag">Inquiry Handling & Follow-up</span>
+            <span class="skill-tag">Client Requirement Gathering</span>
+            <span class="skill-tag">Problem-solving & Issue Resolution</span>
+            <span class="skill-tag">Sales Closure</span>
+            <span class="skill-tag">Lead Generation</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">📧</div>
+            <h3>Communication</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Professional Email Communication</span>
+            <span class="skill-tag">International Client Engagement</span>
+            <span class="skill-tag">Team Coordination</span>
+            <span class="skill-tag">Cross-functional Collaboration</span>
+            <span class="skill-tag">Proposal Writing</span>
+            <span class="skill-tag">Negotiation Support</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">📊</div>
+            <h3>Data & Tools</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Microsoft Excel</span>
+            <span class="skill-tag">Google Sheets</span>
+            <span class="skill-tag">Microsoft Word</span>
+            <span class="skill-tag">PowerPoint</span>
+            <span class="skill-tag">Google Docs</span>
+            <span class="skill-tag">Record Keeping & Reporting</span>
+            <span class="skill-tag">Data Analysis</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">🌐</div>
+            <h3>Digital & Operations</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">CMS & Digital Solutions</span>
+            <span class="skill-tag">Web Design</span>
+            <span class="skill-tag">Inventory Management</span>
+            <span class="skill-tag">Stock Reporting</span>
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">Process Coordination</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Proficiency bars -->
+      <div class="proficiency reveal">
+        <h3 class="prof-title">Tool Proficiency</h3>
+        <div class="prof-bars">
+          <div class="prof-bar-item">
+            <div class="prof-bar-label"><span>Microsoft Excel</span><span class="prof-pct">90%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-label"><span>Google Sheets</span><span class="prof-pct">85%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-label"><span>Client Communication</span><span class="prof-pct">95%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-label"><span>Data Analytics</span><span class="prof-pct">80%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="80"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-label"><span>Web Design (CMS)</span><span class="prof-pct">75%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="75"></div>
+            </div>
+          </div>
+          <div class="prof-bar-item">
+            <div class="prof-bar-label"><span>PowerPoint / Docs</span><span class="prof-pct">88%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="88"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Work History</span>
+        <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-line"></div>
+          <div class="timeline-card current">
+            <div class="tc-header">
+              <div>
+                <span class="tc-badge current-badge">Current</span>
+                <h3 class="tc-role">Junior Sales Executive</h3>
+                <p class="tc-company">ScaleUp Ads Agency</p>
+              </div>
+              <div class="tc-period">
+                <span>Jul 2026</span>
+                <span class="period-dash">—</span>
+                <span class="period-current">Present</span>
+              </div>
+            </div>
+            <ul class="tc-duties">
+              <li>Communicate with international clients to understand requirements and recommend suitable website and
+                digital marketing services.</li>
+              <li>Manage client inquiries and follow-ups, prepare proposals, explain service details, and support
+                negotiations and sales closure.</li>
+              <li>Generate and qualify international leads while maintaining professional communication throughout
+                client engagement.</li>
+              <li>Coordinate with internal team members to clarify requirements and support timely delivery of proposed
+                solutions.</li>
+            </ul>
+            <div class="tc-tags">
+              <span>Sales</span><span>Client Communication</span><span>Lead Generation</span><span>Digital
+                Marketing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-line"></div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div>
+                <h3 class="tc-role">Store In-Charge</h3>
+                <p class="tc-company">Labaid Pharmaceuticals Limited</p>
+              </div>
+              <div class="tc-period">
+                <span>Oct 2025</span>
+                <span class="period-dash">—</span>
+                <span>Mar 2026</span>
+              </div>
+            </div>
+            <ul class="tc-duties">
+              <li>Maintained inventory records and prepared stock reports and stock valuation information.</li>
+              <li>Handled daily stock receiving, issuing, dispatch, and stock verification; checked discrepancies and
+                supported accurate records.</li>
+              <li>Coordinated daily operational tasks with team members to keep inventory activities organized.</li>
+            </ul>
+            <div class="tc-tags">
+              <span>Inventory Management</span><span>Reporting</span><span>Operations</span><span>Team
+                Coordination</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div>
+                <h3 class="tc-role">Web Designer <span class="part-time-tag">Part-time</span></h3>
+                <p class="tc-company">CodemanBD</p>
+              </div>
+              <div class="tc-period">
+                <span>Jul 2023</span>
+                <span class="period-dash">—</span>
+                <span>Sep 2025</span>
+              </div>
+            </div>
+            <ul class="tc-duties">
+              <li>Worked on CMS-based website projects and collaborated to understand project requirements, goals, and
+                target audiences.</li>
+              <li>Communicated about project requirements and helped identify and resolve website-related issues.</li>
+            </ul>
+            <div class="tc-tags">
+              <span>Web Design</span><span>CMS</span><span>Client Collaboration</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="casestudies" class="section casestudy-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Real Projects</span>
+        <h2 class="section-title">Case <span class="gradient-text">Studies</span></h2>
+      </div>
+      <div class="cs-grid">
+
+        <!-- Case Study 1 -->
+        <div class="cs-card reveal">
+          <div class="cs-header">
+            <div class="cs-logo vellor">VH</div>
+            <div class="cs-meta">
+              <span class="cs-industry">Health &amp; Wellness · Shopify</span>
+              <h3 class="cs-title">Vellor Health</h3>
+              <p class="cs-subtitle">Building a Premium Pre-Launch E-Commerce Ecosystem</p>
+            </div>
+            <div class="cs-timeline-badge">7-Day Sprint</div>
+          </div>
+
+          <div class="cs-overview">
+            <p>Transformed an unconfigured Shopify store into a highly credible, educational pre-launch platform for a
+              supplement brand — capturing waitlist leads before inventory launch.</p>
+          </div>
+
+          <div class="cs-details-grid">
+            <div class="cs-detail-col">
+              <h4 class="cs-col-title">🎯 Challenge</h4>
+              <ul>
+                <li>Low initial brand trust as an unlaunched brand</li>
+                <li>No active checkout — products couldn't be purchased yet</li>
+                <li>Sensitive health audience requiring strict FDA compliance</li>
+                <li>Urgent 7-day deadline without sacrificing UX quality</li>
+              </ul>
+            </div>
+            <div class="cs-detail-col">
+              <h4 class="cs-col-title">💡 Solution</h4>
+              <ul>
+                <li>Premium visual design on Shopify Horizon theme</li>
+                <li>Custom coming-soon pages with disabled checkout</li>
+                <li>High-converting waitlist email capture integration</li>
+                <li>FDA-compliant disclaimers and educational content</li>
+                <li>14+ custom pages built in sprint delivery</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cs-journey">
+            <h4 class="cs-col-title">🗺️ Customer Journey</h4>
+            <div class="cs-journey-steps">
+              <div class="cs-step">
+                <div class="cs-step-num">1</div>
+                <span>Discover</span>
+              </div>
+              <div class="cs-step-arrow">→</div>
+              <div class="cs-step">
+                <div class="cs-step-num">2</div>
+                <span>Explore</span>
+              </div>
+              <div class="cs-step-arrow">→</div>
+              <div class="cs-step">
+                <div class="cs-step-num">3</div>
+                <span>Educate</span>
+              </div>
+              <div class="cs-step-arrow">→</div>
+              <div class="cs-step">
+                <div class="cs-step-num">4</div>
+                <span>Convert</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-results">
+            <h4 class="cs-col-title">📊 Results</h4>
+            <div class="cs-metrics">
+              <div class="cs-metric">
+                <span class="cs-metric-val">+42%</span>
+                <span class="cs-metric-label">Engaged Sessions</span>
+              </div>
+              <div class="cs-metric">
+                <span class="cs-metric-val">+38%</span>
+                <span class="cs-metric-label">Engagement Rate</span>
+              </div>
+              <div class="cs-metric">
+                <span class="cs-metric-val">+47%</span>
+                <span class="cs-metric-label">Product Page Views</span>
+              </div>
+              <div class="cs-metric">
+                <span class="cs-metric-val">+52%</span>
+                <span class="cs-metric-label">Waitlist / CTA Actions</span>
+              </div>
+              <div class="cs-metric">
+                <span class="cs-metric-val">+35%</span>
+                <span class="cs-metric-label">Returning Users</span>
+              </div>
+              <div class="cs-metric">
+                <span class="cs-metric-val">100%</span>
+                <span class="cs-metric-label">FDA Compliance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-tags">
+            <span>Shopify</span><span>E-Commerce</span><span>CRO</span><span>Waitlist Flow</span><span>FDA
+              Compliance</span><span>UX Design</span>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="cs-card reveal">
+          <div class="cs-header">
+            <div class="cs-logo lilspois">LP</div>
+            <div class="cs-meta">
+              <span class="cs-industry">Personal Brand · Shopify</span>
+              <h3 class="cs-title">LILSPOIS</h3>
+              <p class="cs-subtitle">Personal Brand Shopify Website &amp; Domain Management</p>
+            </div>
+            <div class="cs-timeline-badge">5-Day Project</div>
+          </div>
+
+          <div class="cs-overview">
+            <p>Built a professional, editable one-page Shopify landing page serving as a central hub for a personal
+              brand — with full social integration and complex multi-domain management.</p>
+          </div>
+
+          <div class="cs-details-grid">
+            <div class="cs-detail-col">
+              <h4 class="cs-col-title">🎯 Challenge</h4>
+              <ul>
+                <li>Tight 2-day initial delivery deadline</li>
+                <li>Managing two separate domains (lilspois.com &amp; lapois.com)</li>
+                <li>GoDaddy to Shopify domain transfer complexities</li>
+                <li>Expanding scope beyond original landing page spec</li>
+              </ul>
+            </div>
+            <div class="cs-detail-col">
+              <h4 class="cs-col-title">💡 Solution</h4>
+              <ul>
+                <li>One-page editable layout with 5+ sections/tabs</li>
+                <li>Social links: Instagram, Pinterest, YouTube, ShopMy</li>
+                <li>Step-by-step domain configuration &amp; transfer support</li>
+                <li>Zoom sessions for real-time collaborative troubleshooting</li>
+                <li>Annotated screenshots &amp; video walkthroughs for client</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cs-approach">
+            <h4 class="cs-col-title">🔧 Technical Approach</h4>
+            <div class="cs-approach-steps">
+              <div class="cs-approach-step">
+                <span class="cs-approach-num">01</span>
+                <div>
+                  <strong>Backup</strong>
+                  <p>Protected original data before any changes</p>
+                </div>
+              </div>
+              <div class="cs-approach-step">
+                <span class="cs-approach-num">02</span>
+                <div>
+                  <strong>Investigate</strong>
+                  <p>Examined root causes of domain/technical issues</p>
+                </div>
+              </div>
+              <div class="cs-approach-step">
+                <span class="cs-approach-num">03</span>
+                <div>
+                  <strong>Modify &amp; Test</strong>
+                  <p>Implemented and verified solutions thoroughly</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-results">
+            <h4 class="cs-col-title">📊 Results</h4>
+            <div class="cs-metrics">
+              <div class="cs-metric">
+                <span class="cs-metric-val">2 days</span>
+                <span class="cs-metric-label">Initial Delivery</span>
+              </div>
+              <div class="cs-metric">
+                <span class="cs-metric-val">5+</span>
+                <span class="cs-metric-label">Sections Built</span>
+              </div>
+              <div class="cs-metric">
+                <span class="cs-metric-val">2</span>
+                <span class="cs-metric-label">Domains Managed</span>
+              </div>
+              <div class="cs-metric">
+                <span class="cs-metric-val">100%</span>
+                <span class="cs-metric-label">Client Satisfaction</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-tags">
+            <span>Shopify</span><span>Personal Branding</span><span>Domain Management</span><span>Client
+              Communication</span><span>Technical Support</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academic Background</span>
+        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+      </div>
+      <div class="edu-grid">
+
+        <div class="edu-card reveal">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-content">
+            <span class="edu-level">Bachelor's Degree</span>
+            <h3>BSc / Honours in Physics</h3>
+            <p class="edu-inst">National University, Bangladesh</p>
+            <div class="edu-meta">
+              <span class="edu-gpa">CGPA: 2.73</span>
+            </div>
+          </div>
+          <div class="edu-glow"></div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon">📚</div>
+          <div class="edu-content">
+            <span class="edu-level">Higher Secondary</span>
+            <h3>HSC, Science</h3>
+            <p class="edu-inst">Haziganj Govt. Model College</p>
+            <div class="edu-meta">
+              <span class="edu-year">2014 – 2016</span>
+              <span class="edu-gpa">GPA: 4.83</span>
+            </div>
+          </div>
+          <div class="edu-glow"></div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon">📖</div>
+          <div class="edu-content">
+            <span class="edu-level">Secondary School</span>
+            <h3>SSC, Science</h3>
+            <p class="edu-inst">Shahrasti Govt. M/L High School</p>
+            <div class="edu-meta">
+              <span class="edu-year">2009 – 2014</span>
+              <span class="edu-gpa gpa-gold">GPA: 5.00 ⭐</span>
+            </div>
+          </div>
+          <div class="edu-glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section cert-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">My <span class="gradient-text">Certifications</span></h2>
+      </div>
+      <div class="cert-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-logo microsoft">MS</div>
+          <div class="cert-info">
+            <h4>Career Essentials in Data Analysis</h4>
+            <p>Microsoft & LinkedIn</p>
+          </div>
+          <div class="cert-badge">✓</div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-logo hdnb">HD</div>
+          <div class="cert-info">
+            <h4>Data Analytics Career Bootcamp</h4>
+            <p>HDNB</p>
+          </div>
+          <div class="cert-badge">✓</div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-logo excel">XL</div>
+          <div class="cert-info">
+            <h4>Microsoft Excel</h4>
+            <p>10 Minute School</p>
+          </div>
+          <div class="cert-badge">✓</div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-logo webdev">WD</div>
+          <div class="cert-info">
+            <h4>Complete Web Development</h4>
+            <p>Programming Hero</p>
+          </div>
+          <div class="cert-badge">✓</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTRAS: EXTRACURRICULAR & HOBBIES -->
+  <section id="extras" class="section extras-section">
+    <div class="container">
+      <div class="extras-grid">
+
+        <!-- Extracurricular -->
+        <div class="extras-block reveal">
+          <div class="section-header" style="text-align:left; margin-bottom:2rem;">
+            <span class="section-tag">Beyond Work</span>
+            <h2 class="section-title">Extracurricular <span class="gradient-text">Activities</span></h2>
+          </div>
+          <div class="scout-card">
+            <div class="scout-header">
+              <div class="scout-icon">⚜️</div>
+              <div>
+                <h3>Boy Scout Member</h3>
+                <span class="scout-period">2009 – 2014</span>
+              </div>
+            </div>
+            <div class="scout-highlights">
+              <div class="scout-item">
+                <div class="scout-dot"></div>
+                <p>Participated in a <strong>health awareness camp</strong> promoting hygiene in the community</p>
+              </div>
+              <div class="scout-item">
+                <div class="scout-dot"></div>
+                <p>Took part in a <strong>district-level scout jamboree</strong> representing the school</p>
+              </div>
+              <div class="scout-item">
+                <div class="scout-dot"></div>
+                <p>Developed <strong>teamwork, outdoor survival, and leadership skills</strong> through organized
+                  scouting activities</p>
+              </div>
+            </div>
+            <div class="scout-skills">
+              <span>Leadership</span>
+              <span>Teamwork</span>
+              <span>Community Service</span>
+              <span>Outdoor Survival</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="extras-block reveal">
+          <div class="section-header" style="text-align:left; margin-bottom:2rem;">
+            <span class="section-tag">Passions</span>
+            <h2 class="section-title">Hobbies &amp; <span class="gradient-text">Interests</span></h2>
+          </div>
+          <div class="hobbies-grid">
+            <div class="hobby-card">
+              <div class="hobby-icon">🛠️</div>
+              <h4>Learning New Tech Tools</h4>
+              <p>Always exploring the latest software, platforms, and digital tools to stay ahead of the curve</p>
+            </div>
+            <div class="hobby-card">
+              <div class="hobby-icon">📊</div>
+              <h4>Data Analytics</h4>
+              <p>Passionate about learning new analytics techniques, tools, and methods to extract actionable insights
+              </p>
+            </div>
+            <div class="hobby-card hobby-wide">
+              <div class="hobby-icon">⚽</div>
+              <h4>Football</h4>
+              <p>Love the game for its core values — <strong>teamwork</strong>, <strong>strategy</strong>, and
+                <strong>leadership</strong> on and off the field
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-desc">
+            I'm currently open to new opportunities and collaborations.
+            Whether you have a question, a project idea, or just want to say hi —
+            my inbox is always open!
+          </p>
+          <div class="contact-links">
+            <a href="mailto:asifibnekamal.10@gmail.com" class="contact-link">
+              <div class="cl-icon">📧</div>
+              <div>
+                <span class="cl-label">Email</span>
+                <span class="cl-val">asifibnekamal.10@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:01811786062" class="contact-link">
+              <div class="cl-icon">📞</div>
+              <div>
+                <span class="cl-label">Phone</span>
+                <span class="cl-val">01811786062</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/asifibnekama" target="_blank" class="contact-link">
+              <div class="cl-icon">💼</div>
+              <div>
+                <span class="cl-label">LinkedIn</span>
+                <span class="cl-val">linkedin.com/in/asifibnekama</span>
+              </div>
+            </a>
+            <a href="https://github.com/asifibnekamal" target="_blank" class="contact-link">
+              <div class="cl-icon">🐙</div>
+              <div>
+                <span class="cl-label">GitHub</span>
+                <span class="cl-val">github.com/asifibnekamal</span>
+              </div>
+            </a>
+            <div class="contact-link no-link">
+              <div class="cl-icon">📍</div>
+              <div>
+                <span class="cl-label">Location</span>
+                <span class="cl-val">Dhaka, Bangladesh</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" id="contactForm">
+            <!-- Web3Forms hidden fields -->
+            <input type="hidden" name="web" value="imnr yqon jmea wggg" />
+            <input type="hidden" name="subject" value="New Portfolio Contact — Asif Ibne Kamal" />
+            <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+            <input type="hidden" name="redirect" value="false" />
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" name="subject_detail" placeholder="Job Opportunity" />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="5" name="message" placeholder="Let's talk about..." required></textarea>
+            </div>
+            <div id="formStatus" class="form-status" style="display:none;"></div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="brand-text">AIK</span>
+          <span class="brand-dot"></span>
+          <p>Asif Ibne Kamal</p>
+        </div>
+        <p class="footer-copy">© 2026 Asif Ibne Kamal. Crafted with 💙</p>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="https://github.com/asifibnekamal" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/asifibnekama" target="_blank">LinkedIn</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
