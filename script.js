@@ -248,13 +248,59 @@ const barObserver = new IntersectionObserver((entries) => {
 const profSection = document.querySelector('.proficiency');
 if (profSection) barObserver.observe(profSection);
 
-// ─── CONTACT FORM — PURE NATIVE FORMSUBMIT ───────────────────
+// ─── CONTACT FORM — WEB3FORMS (Direct API Submission) ─────────
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', () => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
     const submitBtn = document.getElementById('submitBtn');
-    if (submitBtn) {
-      submitBtn.querySelector('span').textContent = 'Sending...';
+    const formStatus = document.getElementById('formStatus');
+    const originalBtnText = submitBtn.querySelector('span').textContent;
+
+    // Show sending state
+    submitBtn.disabled = true;
+    submitBtn.querySelector('span').textContent = 'Sending...';
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        formStatus.style.display = 'block';
+        formStatus.className = 'form-status success';
+        formStatus.textContent = '✅ Message sent successfully! I will get back to you soon.';
+        // Reset and clear all inputs
+        form.reset();
+        form.querySelectorAll('input:not([type="hidden"]), textarea').forEach(input => {
+          input.value = '';
+        });
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.error('Submission error:', err);
+      formStatus.style.display = 'block';
+      formStatus.className = 'form-status error';
+      formStatus.textContent = '❌ Failed to send. Please email directly: asifibnekamal.10@gmail.com';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.querySelector('span').textContent = originalBtnText;
+      setTimeout(() => {
+        if (formStatus) formStatus.style.display = 'none';
+      }, 6000);
     }
   });
 }
