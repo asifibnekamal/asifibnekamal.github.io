@@ -433,6 +433,7 @@ img { max-width: 100%; }
 .hero-roles {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.4rem;
   font-size: 1.2rem;
   color: var(--white60);
@@ -440,7 +441,7 @@ img { max-width: 100%; }
   animation: fadeInDown 1s ease 0.4s both;
 }
 
-.role-prefix { font-weight: 400; }
+.role-prefix { font-weight: 400; white-space: nowrap; }
 
 .typing-text {
   color: var(--sky);
@@ -1951,4 +1952,29 @@ img { max-width: 100%; }
   opacity: 0.7;
   cursor: not-allowed;
   transform: none !important;
+}
+
+
+/* ========================================
+   NEW CERT LOGOS & CERT LINK
+======================================== */
+.shopify  { background: linear-gradient(135deg, #96bf48, #5c9f2e); color: white; }
+.webflow  { background: linear-gradient(135deg, #4353ff, #0096ff); color: white; }
+.google   { background: linear-gradient(135deg, #4285f4, #34a853); color: white; }
+.wordpress{ background: linear-gradient(135deg, #21759b, #0073aa); color: white; }
+
+.cert-link {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--sky);
+  margin-top: 0.3rem;
+  letter-spacing: 0.03em;
+  transition: color 0.3s ease;
+}
+.cert-link:hover { color: var(--sky-light); }
+
+/* Make cert grid 2-col on larger screens, auto on smaller */
+@media (min-width: 769px) {
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
 }
